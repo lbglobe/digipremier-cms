@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "name": "service",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "detail": {
+      "type": "richtext"
+    },
+    "image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "metaTitle": {
+      "type": "string"
+    },
+    "metaKeyword": {
+      "type": "string"
+    },
+    "metaDescription": {
+      "type": "string"
+    },
+    "overview": {
+      "type": "string",
+      "required": true,
+      "private": false,
+      "unique": false
+    },
+    "category": {
+      "model": "category",
+      "via": "services"
+    }
+  }
+}
