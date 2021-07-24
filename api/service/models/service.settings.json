@@ -51,8 +51,8 @@
       "unique": false
     },
     "category": {
-      "model": "category",
-      "via": "services"
+      "via": "services",
+      "model": "category"
     }
   }
 }
